@@ -34,19 +34,7 @@ function closeCreate() {
 		isCreateOpen = false;
 	}
 }
-function openSamples() {
-	if(!isSamplesOpen) {
-		$('.samples').fadeIn('fast');
-		isSamplesOpen = true;
-	}
-}
-function closeSamples() {
-	if(isSamplesOpen) {
-		$('.samples').fadeOut('fast');
-		$('#samples-err').html("");
-		isSamplesOpen = false;
-	}
-}
+
 function openKruskals() {
 	if(!isKruskalsOpen) {
 		$('.kruskals').fadeIn('fast');
@@ -77,7 +65,6 @@ function closePrims() {
 function hideEntireActionsPanel() {
 	closeDraw();
 	closeCreate();
-	closeSamples();
 	closeKruskals();
 	closePrims();
 	hideActionsPanel();
@@ -88,7 +75,6 @@ $( document ).ready(function() {
 	//action pullouts
 	$('#draw').click(function() {
 		openDraw();
-		closeSamples();
 		closePrims();
 		closeKruskals();
 		closeCreate();
@@ -96,7 +82,6 @@ $( document ).ready(function() {
 
 	$('#create').click(function() {
 		closeDraw();
-		closeSamples();
 		closePrims();
 		closeKruskals();
 		openCreate();
@@ -107,13 +92,11 @@ $( document ).ready(function() {
 		closeCreate();
 		closePrims();
 		closeKruskals();
-		openSamples();
 	})
 	
 	$('#prims').click(function() {
 		closeDraw();
 		closeCreate();
-		closeSamples();
 		closeKruskals();
 		openPrims();
 	});
@@ -121,7 +104,6 @@ $( document ).ready(function() {
 	$('#kruskals').click(function() {
 		closeDraw();
 		closeCreate();
-		closeSamples();
 		closePrims();
 		openKruskals();
 	});
